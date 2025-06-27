@@ -1,0 +1,207 @@
+                                                                             Bash (Bourne Again Shell)
+1)Bash was developed in 1989 by Brian Fox.
+2)Bash was created as a free replacement for the Bourne shell. It quickly became the default for GNU and many Linux systems.
+3)Over time, Bash added features from other shells, such as the Korn shell (KSH) and C shell (CSH), and it became a very versatile tool for command-line users.
+
+
+4)Bash is used to run commands and write scripts on Unix/Linux systems.
+5)Bash is the default shell on most Linux and macOS systems.
+
+
+6)Bash is a powerful tool for developers and system administrators.
+7)Understanding and mastering Bash is important for working in Unix/Linux.
+
+
+
+
+
+
+>> wsl (windows subsystem for Linux)                                           //which is for Linux support 
+>> cat /etc/shells                                                            //which is for to show the all bash list 
+>> echo $SHELL                                                               //it shows where the shell is present in the system
+>> which bash                                                               //it shows where our bash is present in the system
+>> pwd                                                                     //it shows the present working directory in the system
+>> whoami                                                                 //it shows that the user of the system
+>> touch filename.sh                                                     //files should be created with  ".sh" extension
+>> vi filename.sh                                                       //to insert the file in vi editor
+>> i                                                                   //which is for "insert the text in the file" 
+>> #!                                                                 //it is known as "Shibang text"
+>> #!/usr/bin/bash                                                   //which is used for "location" of the system for the given text
+>> echo "statements or file content"
+>> if we want to exit from the " "insert" page" then click "esc"
+
+
+
+>> :wq            //which is used for exit from the vi editor
+>> cat Hello.sh  //which is used to show or view the text in the vi editor
+
+
+
+
+>> ./Hello.sh       //which is used to exhausted the shell scripting file
+                          (or)
+>> bash Hello.sh   //which is used to exhausted the shell scripting file
+
+
+
+
+ 
+//if the Permissions is denied for the shell scripting file exhaustion then :  "">> ls -al""          //this command will shows all the file locations in the file manager
+
+//if we want to show the specified file location in the file folder then the command is :  "">> ls -l filename.Extension""
+
+
+
+
+//then later use "chmod" commands like : 1) >> chmod 777 Hello.sh
+//then later check the file location  : 2) >> ls -al                   //weather it is supported to read,write,exhuation.
+//then later exhuate the shell scripting file  ex : >> ""./Hello.sh""	(or)	""bash Hello.sh""    
+
+
+
+
+
+
+
+/*	****here is the depth concept based on the  ""'CHMOD'"" command****
+
+>> In Unix-like systems, every file has three types of permissions for three categories of users:
+
+"Category"	"Meaning"
+ u	         user (owner)
+ g	         group
+ o	         others (everyone else)
+ a	         all (user + group + others)
+
+And each has three types of permissions:
+
+"Symbol"	"Meaning"
+ r	         read
+ w	         write
+ x	         execute (run)
+
+
+
+
+>>  chmod u+x script.sh         # Give execute permission to the user (owner)
+    chmod go-w file.txt         # Remove write permission from group and others
+    chmod a=r file.txt          # Set read-only for all (user, group, others)
+
+
+>> | Permission  | Value |
+   | ----------- | ----- |
+   | read (r)    | 4     |
+   | write (w)   | 2     |
+   | execute (x) | 1     |
+
+>> 7 = read + write + execute
+
+   6 = read + write
+
+   5 = read + execute
+
+   4 = read only
+
+
+>> example :  >> chmod 755 script.sh
+
+>> 7 → user: read + write + execute
+
+   5 → group: read + execute
+
+   5 → others: read + execute
+	*/
+
+
+
+// You can use ls -l to view permissions:
+>> ls -l file.txt
+
+
+
+
+
+
+
+
+//Variables
+
+x=10
+echo $x
+echo "the value of x is : $x"
+y=15
+echo $y
+echo "the value of y is : $y"
+echo $((x+y))
+
+
+
+
+        
+//read the file by the user 
+>> read Welcome
+>> echo $Welcome
+
+output : Hello World!
+	 Hello World!
+
+
+               (or)   
+                
+                
+note : here if we don't give any variable for the read operation it will defaultly ""reply"" keyword in the bash.
+>> read 
+>> echo $reply   --->  (or)  --->  >> echo $raju 
+
+output : Vamsi
+
+
+               (or)    
+                
+               
+//read the file by the user in another type
+>> read -p 'enter a number : ' Vamsi
+>> echo $Vamsi
+
+output : 
+	enter a number : 202
+			 202
+                             
+                          
+               (or)
+
+
+//read the file by the user in another type
+>> read -sp 'enter b value : ' vasu
+>> echo $vasu
+
+output : 
+	enter b value : 222
+
+note : here it will not repeat the output in two times
+         
+
+
+
+
+
+
+
+
+
+//arrays in Shell Scripting
+>> read -a shiva
+>> echo "${shiva[2]}"   
+
+output : we are venom in this universe         //this is the array input
+         venom                                //this is the output     
+
+
+
+
+
+
+
+
+
+
