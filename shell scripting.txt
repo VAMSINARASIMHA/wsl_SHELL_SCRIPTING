@@ -194,14 +194,112 @@ note : here it will not repeat the output in two times
 >> echo "${shiva[2]}"   
 
 output : we are venom in this universe         //this is the array input
-         venom                                //this is the output     
+         venom                                //this is the output  
+
+
+// Conditional Statements in Bash Shell Scripting Language
+>> Syntax : for  
+1)if Statement :  
+               if [ condition ];           //here ";" is not necesssary, if we want to use we can use. their is no problem to use the ";"
+               then
+               commands
+               fi
+
+
+Example : 
+         name="Vamsi"
+         if [ "$name" = "Vamsi" ];       //here Spaces are necessary in this line 
+         then
+         echo "this is Correct"
+         fi
+ 
 
 
 
+2)if-else Statement : 
+                     if [ condition ]
+                     then
+                     commands_if_true
+                     else
+                     commands_if_false
+                     fi
 
 
 
+Example : 
+         name="vamsi"
+         if [ "$name" == "vamsi" ]
+         then
+         echo "Hello, Vamsi!"
+         else
+         echo "Who are you?"
+         fi
 
 
 
+3)if-elif-else Statement : 
+                           if [ condition1 ]
+                           then
+                           commands1
+                           elif [ condition2 ]
+                           then
+                           commands2
+                           else
+                           commands3
+                           fi
 
+
+                          
+Example :  name="Vamsi"
+           Nam="ravi"
+           if [ "$name" == "Vamsi" ]
+           then
+           echo "Hello, Vamsi!"
+           elif [ "$Nam" == "Ravi" ]
+           then
+           echo "Hello, Ravi!"
+           else
+           echo "Who are you?"
+           fi
+
+
+
+4)Nested if Statement : 
+                       if [ condition1 ]
+                       then
+                       if [ condition2 ]
+                       then
+                       commands1
+                       fi
+                       fi
+
+
+
+Example : 
+         name="vamsi"
+         Nam="Ravi"
+         if [ "$name" == "vamsi" ]
+         then
+         if [ "$Nam" == "Ravi" ]
+         then
+         echo "Hello, Vamsi!"
+         fi
+         fi
+
+
+
+*) Common Operators in Bash Conditionals:
+-->Numeric Operators:
+                 ___________________________________________
+                |     Operator	     Meaning               |
+                |-------------------------------------------|
+                |      -eq	           Equal to              |
+                |      -ne	           Not equal to          |
+                |      -lt	           Less than             |
+                |      -le	           Less than or equal    | 
+                |      -gt	           Greater than          | 
+                |      -ge	           Greater than or equal |
+                |___________________________________________|                                          |
+
+Examples : 
+          1)
