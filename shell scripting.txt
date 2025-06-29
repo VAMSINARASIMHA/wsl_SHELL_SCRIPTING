@@ -302,4 +302,40 @@ Example :
                 |___________________________________________|                                          |
 
 Examples : 
-          1)
+        1)read -p 'enter a number : ' n
+          if [ $n -ge 18 ]
+          then
+          echo "Your are eligible to vote"
+          else
+          echo "Your are not eligible to vote"
+          fi
+         
+          
+         
+        2)read -p 'Enter your age : ' x
+          read -p 'Enter your girl age : ' y
+          if [ $x -gt 21 ] && [ $y -ge 18 ]
+          then
+          echo "CONGRATULATIONS YOU BOTH WILL GET MARRIED"
+          else
+          echo "EAT FIVE STAR DO NOTHING"
+          fi
+         
+
+
+String Operators:
+                 Operator	        Meaning
+                 == or =	        Equal
+                 !=	              Not equal
+                 -z	              Is empty
+                 -n	              Is not empty
+
+
+
+Example with String and Numbers : 
+                                 3)name="vamsi"
+                                   age=18
+                                   if [[ "$name" == "vamsi" && $age -ge 18 ]]           //In logical operations for "&&" Operator both conditions must be true and in "||" Operator any one condition must be true in the "if" condition
+                                   then
+                                   echo "Welcome, Vamsi! You are eligible."
+                                   fi
