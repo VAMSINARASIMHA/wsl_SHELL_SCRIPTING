@@ -299,7 +299,7 @@ Example :
                 |      -le	      Less than or equal    | 
                 |      -gt	      Greater than          | 
                 |      -ge	      Greater than or equal |
-                |___________________________________________|                                          |
+                |___________________________________________|                                          
 
 Examples : 
         1)read -p 'enter a number : ' n
