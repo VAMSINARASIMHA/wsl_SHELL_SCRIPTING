@@ -44,6 +44,9 @@
 
 
 
+//Semicolons ; can be used to separate multiple commands on the same line, which is useful for writing concise scripts.
+ex : echo "This is a test"; echo "This is another test"
+
 
  
 //if the Permissions is denied for the shell scripting file exhaustion then :  "">> ls -al""          //this command will shows all the file locations in the file manager
@@ -189,12 +192,28 @@ note : here it will not repeat the output in two times
 
 
 
-//arrays in Shell Scripting
+//arrays in Shell Scripting : 
 >> read -a shiva
 >> echo "${shiva[2]}"   
 
 output : we are venom in this universe         //this is the array input
          venom                                //this is the output  
+
+
+
+Example: Create an Array
+my_array=("value1" "value2" "value3")
+
+
+
+Example: Access Array Elements
+echo ${my_array[0]}
+
+
+
+Example: Modify Array Elements
+my_array[1]="new_value"
+
 
 
 // Conditional Statements in Bash Shell Scripting Language
@@ -339,3 +358,103 @@ Example with String and Numbers :
                                    then
                                    echo "Welcome, Vamsi! You are eligible."
                                    fi
+
+
+
+loops in shell Scripting :
+                     Syntax:     
+                           for variable in list;
+                           do
+                           commands
+                           done
+
+
+
+Example : 
+       1)for name in vamsi shiva trayam;
+         do
+         echo "hello, $name"
+         done
+
+
+
+2)for alphabets in {a..z};   //here in brackets, only two dots should be present. it is a Syntax 
+  do 
+  echo "$alphabets"
+  done
+
+
+
+3)for num in {1..10};
+do
+echo "$num"
+done
+
+
+
+while loop : 
+           Syntax:
+                  Initialization
+                  while [ condition ];
+                  do
+                  commands
+                  ((increment/decrement))
+                  done
+
+
+
+Example : 
+         1)count=1
+           while [ $count -le 3 ];
+           do
+           echo "Count is $count"
+           ((count++))
+           done
+           
+           
+             
+         2)n=5
+           while [ $n -le 10 ];
+           do
+           echo "Count is : $n"
+           ((n++))
+           done
+
+
+
+Until loop :  Until loops are similar to while loops, but they execute until a specified condition becomes true. 
+            Syntax : 
+                     Initialization
+                     until [ condition ];
+                     do
+                     commands
+                     ((increment/decrement))
+                     done
+
+
+
+            Example(1) : 
+                     n=1
+                     until [ $n -ge 3 ];
+                     do
+                     echo "the count is : $n"
+                     ((n++))
+                     done
+
+                     output :-   the count is : 1
+                                 the count is : 2
+
+
+
+            Example(2) : 
+                     n=1
+                     until [ $n -gt 3 ];
+                     do
+                     echo "the count is : $n"
+                     ((n++))
+                     done
+
+                     output :-   the count is : 1
+                                 the count is : 2
+                                 the count is : 3
+                                                                               
