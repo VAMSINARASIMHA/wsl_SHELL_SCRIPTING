@@ -457,4 +457,45 @@ Until loop :  Until loops are similar to while loops, but they execute until a s
                      output :-   the count is : 1
                                  the count is : 2
                                  the count is : 3
-                                                                               
+
+
+
+Break and Continue : Break and continue statements are used to control loop execution. break exits the loop, while continue skips to the next iteration.
+
+These statements are typically used inside conditional blocks to alter the flow of the loop.
+
+Example on  "Continue" : 
+                        for i in {1..5};
+                        do
+                        if [ $i -eq 3 ];
+                        then
+                        continue
+                        fi
+                        echo "Number $i"
+                        done
+
+Example on "Break" : 
+                     for i in {1..5};
+                     do
+                     if [ $i -eq 4 ];
+                     then
+                     break
+                     fi
+                     echo "Number $i"
+                     done
+
+Example on both "Continue" and "break" : 
+                                         for i in {1..5};
+                                         do
+                                         if [ $i -eq 3 ];
+                                         then
+                                         continue
+                                         fi
+                                         echo "Number $i"
+                                         if [ $i -eq 4 ]; then
+                                         break
+                                         fi
+                                         done   
+
+
+
