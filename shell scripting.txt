@@ -685,3 +685,13 @@ THE VARIABLE EXPORT FROM WSL TERMINAL TO VI EDITOR :
 
 
 
+Note : 
+       vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
+       SURESH
+       vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ exit
+       logout
+       
+       C:\Users\vamsi>wsl
+       vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
+                                                                //here the connection between wsl terminal and vi editor is closed so it will not exhuate the code and any variable is not stored in the person  and it is a temporarly stored variable 
+
