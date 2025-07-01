@@ -535,3 +535,78 @@ Reading a file line by line :
 
                               Output : it reads the inside file data or the content in the file.
 
+
+
+sleep concept : it will wait for 3 seconds to Exhuate the code
+      Example : 
+                echo "hey vamsi"
+                
+                sleep 3
+                
+                echo "how are you"
+                
+                sleep 3
+                
+                echo "what are you doing"
+                
+                sleep 3
+                
+                echo "have a nice day"
+                
+                sleep 3
+                
+                echo "bye" 
+
+
+
+Positional Arguments (or) Positional Parameters : 
+                                        Example :
+                                                  name=$1
+                                                  stud=$2
+                                                  
+                                                  echo "hey $name"
+                                                  
+                                                  sleep 3
+                                                  
+                                                  echo "are you $stud"
+                                                  
+                                                  sleep 3
+                                                  
+                                                  echo "how are you $name ,is everything good!"
+
+output : 
+        vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$  bash Hello.sh vamsi student
+        hey vamsi
+        are you student
+        how are you vamsi ,is everything good!
+
+
+
+IMP EXAMPLE : 
+              name=$1
+              stud=$2
+              
+              user=$(whoami)
+              date=$(date)
+              whereami=$(pwd)
+              
+              echo "hey $name"
+              
+              sleep 3
+              
+              echo "are you $stud or a $user"
+              
+              sleep 3
+              
+              echo "how are you $name ,is everything good! AND WHAT IS THE TODAY'S DATE $date"
+              
+              sleep 3
+              
+              echo "where am i now : $whereami"
+
+Output : 
+        vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$  bash Hello.sh vamsi student
+        hey vamsi
+        are you student or a vamsi
+        how are you vamsi ,is everything good! AND WHAT IS THE TODAY'S DATE Tue Jul  1 13:33:13 UTC 2025
+        where am i now : /mnt/c/Users/vamsi              
