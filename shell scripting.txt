@@ -609,4 +609,79 @@ Output :
         hey vamsi
         are you student or a vamsi
         how are you vamsi ,is everything good! AND WHAT IS THE TODAY'S DATE Tue Jul  1 13:33:13 UTC 2025
-        where am i now : /mnt/c/Users/vamsi              
+        where am i now : /mnt/c/Users/vamsi  
+
+
+
+ONE IMP COMMAND : 
+                  vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$  echo "$PWD, $SHELL, $USER, $HOSTNAME, $(whoami)"
+                  /mnt/c/Users/vamsi, /bin/bash, vamsi, LAPTOP-MBUD7PIO, vamsi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE VARIABLE EXPORT FROM WSL TERMINAL TO VI EDITOR :
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ person="SURESH"
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
+                                                      SURESH
+                                                      
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ cat Hello.sh
+                                                      #!/usr/bin/bash
+                                                      namee=$1
+                                                      stud=$2
+                                                      whereami=$(pwd)
+                                                      echo "hey $namee"
+                                                      sleep 3
+                                                      echo "are you $stud"
+                                                      sleep 3
+                                                      echo "how are you $namee ,is everything good!"
+                                                      sleep 3
+                                                      echo "where am i now : $whereami"
+                                                      
+                                                      
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ vi Hello.sh
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ cat Hello.sh
+                                                      #!/usr/bin/bash
+                                                      namee=$1
+                                                      stud=$2
+                                                      whereami=$(pwd)
+                                                      echo "hey $namee"
+                                                      sleep 3
+                                                      echo "are you $stud"
+                                                      sleep 3
+                                                      echo "how are you $namee ,is everything good!"
+                                                      sleep 3
+                                                      echo "where am i now : $whereami"
+                                                      echo "$person"                                #here the variable is placed from wsl terminal to vi editor
+                                                      
+
+
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ bash Hello.sh vamsi student
+                                                      hey vamsi
+                                                      are you student
+                                                      how are you vamsi ,is everything good!
+                                                      where am i now : /mnt/c/Users/vamsi
+                                                      //here this line shows a empty space due to it is not exhuate the """  echo "$person" command  """
+
+
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ export person                  //it will export the variable from wsl terminal to vi editor.
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ bash Hello.sh vamsi student
+                                                      hey vamsi
+                                                      are you student
+                                                      how are you vamsi ,is everything good!
+                                                      where am i now : /mnt/c/Users/vamsi
+                                                      SURESH
+
+
+
