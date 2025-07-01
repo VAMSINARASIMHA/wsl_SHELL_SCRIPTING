@@ -695,3 +695,57 @@ Note :
        vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
                                                                 //here the connection between wsl terminal and vi editor is closed so it will not exhuate the code and any variable is not stored in the person  and it is a temporarly stored variable 
 
+
+
+RANDOM FUNCTION : 
+                >> echo "$RANDOM"                        //it's range between '0' to '32767'   
+
+
+
+1. Using bc for exponentiation : 
+                        Syntax : 
+                                echo "base ^ exponent" | bc
+                    Example(1) :
+                                echo "2^5" | bc
+                    Example(2) :
+                                base=3
+                                power=4
+                                result=$(echo "$base^$power" | bc)
+                                echo "Result: $result"
+
+
+
+2. Using awk for exponentiation :
+                         Syntax : 
+                                awk "BEGIN { print base ^ exponent }"
+                        Example : 
+                                awk "BEGIN { print 2^5 }"
+                                                              
+          
+
+Example on arithmetic operations with random function : 
+echo "$((2+3))"                                         //5
+echo "$((2-3))"                                        //-1  
+echo "$((2*3))"                                       //6
+echo "$((2/3))"                                      //0   
+echo "$((2%3))"                                     //2
+echo "2^2" | bc                                    //4
+echo "2^3" | bc                                   //8 
+awk "BEGIN { print 2^4 }"                        //16
+
+
+
+base=3
+power=4
+result=$(echo "$base^$power" | bc)
+echo "Result: $result"                          //81
+
+
+
+
+
+echo "$(($RANDOM+10))"         
+echo "$(($RANDOM-10))"
+echo "$(($RANDOM*10))"           // These all gives a random numbers
+echo "$(($RANDOM/10))"
+echo "$(($RANDOM%10))"
