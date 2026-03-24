@@ -1,0 +1,751 @@
+                                                                             Bash (Bourne Again Shell)
+1)Bash was developed in 1989 by Brian Fox.
+2)Bash was created as a free replacement for the Bourne shell. It quickly became the default for GNU and many Linux systems.
+3)Over time, Bash added features from other shells, such as the Korn shell (KSH) and C shell (CSH), and it became a very versatile tool for command-line users.
+
+
+4)Bash is used to run commands and write scripts on Unix/Linux systems.
+5)Bash is the default shell on most Linux and macOS systems.
+
+
+6)Bash is a powerful tool for developers and system administrators.
+7)Understanding and mastering Bash is important for working in Unix/Linux.
+
+
+
+
+
+
+>> wsl (windows subsystem for Linux)                                           //which is for Linux support 
+>> cat /etc/shells                                                            //which is for to show the all bash list 
+>> echo $SHELL                                                               //it shows where the shell is present in the system
+>> which bash                                                               //it shows where our bash is present in the system
+>> pwd                                                                     //it shows the present working directory in the system
+>> whoami                                                                 //it shows that the user of the system
+>> touch filename.sh                                                     //files should be created with  ".sh" extension
+>> vi filename.sh                                                       //to insert the file in vi editor
+>> i                                                                   //which is for "insert the text in the file" 
+>> #!                                                                 //it is known as "Shibang text"
+>> #!/usr/bin/bash                                                   //which is used for "location" of the system for the given text
+>> echo "statements or file content"
+>> if we want to exit from the " "insert" page" then click "esc"
+
+
+
+>> :wq            //which is used for exit from the vi editor
+>> cat Hello.sh  //which is used to show or view the text in the vi editor
+
+
+
+
+>> ./Hello.sh       //which is used to exhausted the shell scripting file
+                          (or)
+>> bash Hello.sh   //which is used to exhausted the shell scripting file
+
+
+
+//Semicolons ; can be used to separate multiple commands on the same line, which is useful for writing concise scripts.
+ex : echo "This is a test"; echo "This is another test"
+
+
+ 
+//if the Permissions is denied for the shell scripting file exhaustion then :  "">> ls -al""          //this command will shows all the file locations in the file manager
+
+//if we want to show the specified file location in the file folder then the command is :  "">> ls -l filename.Extension""
+
+
+
+
+//then later use "chmod" commands like : 1) >> chmod 777 Hello.sh
+//then later check the file location  : 2) >> ls -al                   //weather it is supported to read,write,exhuation.
+//then later exhuate the shell scripting file  ex : >> ""./Hello.sh""	(or)	""bash Hello.sh""    
+
+
+
+
+
+
+
+/*	****here is the depth concept based on the  ""'CHMOD'"" command****
+
+>> In Unix-like systems, every file has three types of permissions for three categories of users:
+
+"Category"	"Meaning"
+ u	         user (owner)
+ g	         group
+ o	         others (everyone else)
+ a	         all (user + group + others)
+
+And each has three types of permissions:
+
+"Symbol"	"Meaning"
+ r	         read
+ w	         write
+ x	         execute (run)
+
+
+
+
+>>  chmod u+x script.sh         # Give execute permission to the user (owner)
+    chmod go-w file.txt         # Remove write permission from group and others
+    chmod a=r file.txt          # Set read-only for all (user, group, others)
+
+
+>> | Permission  | Value |
+   | ----------- | ----- |
+   | read (r)    | 4     |
+   | write (w)   | 2     |
+   | execute (x) | 1     |
+
+>> 7 = read + write + execute
+
+   6 = read + write
+
+   5 = read + execute
+
+   4 = read only
+
+
+>> example :  >> chmod 755 script.sh
+
+>> 7 → user: read + write + execute
+
+   5 → group: read + execute
+
+   5 → others: read + execute
+	*/
+
+
+
+// You can use ls -l to view permissions:
+>> ls -l file.txt
+
+
+
+
+
+
+
+
+//Variables
+
+x=10
+echo $x
+echo "the value of x is : $x"
+y=15
+echo $y
+echo "the value of y is : $y"
+echo $((x+y))
+
+
+
+
+        
+//read the file by the user 
+>> read Welcome
+>> echo $Welcome
+
+output : Hello World!
+	 Hello World!
+
+
+               (or)   
+                
+                
+note : here if we don't give any variable for the read operation it will defaultly ""reply"" keyword in the bash.
+>> read 
+>> echo $reply   --->  (or)  --->  >> echo $raju 
+
+output : Vamsi
+
+
+               (or)    
+                
+               
+//read the file by the user in another type
+>> read -p 'enter a number : ' Vamsi
+>> echo $Vamsi
+
+output : 
+	enter a number : 202
+			 202
+                             
+                          
+               (or)
+
+
+//read the file by the user in another type
+>> read -sp 'enter b value : ' vasu
+>> echo $vasu
+
+output : 
+	enter b value : 222
+
+note : here it will not repeat the output in two times
+         
+
+
+
+
+
+
+
+
+
+//arrays in Shell Scripting : 
+>> read -a shiva
+>> echo "${shiva[2]}"   
+
+output : we are venom in this universe         //this is the array input
+         venom                                //this is the output  
+
+
+
+Example: Create an Array
+my_array=("value1" "value2" "value3")
+
+
+
+Example: Access Array Elements
+echo ${my_array[0]}
+
+
+
+Example: Modify Array Elements
+my_array[1]="new_value"
+
+
+
+// Conditional Statements in Bash Shell Scripting Language
+>> Syntax : for  
+1)if Statement :  
+               if [ condition ];           //here ";" is not necesssary, if we want to use we can use. their is no problem to use the ";"
+               then
+               commands
+               fi
+
+
+Example : 
+         name="Vamsi"
+         if [ "$name" = "Vamsi" ];       //here Spaces are necessary in this line 
+         then
+         echo "this is Correct"
+         fi
+ 
+
+
+
+2)if-else Statement : 
+                     if [ condition ]
+                     then
+                     commands_if_true
+                     else
+                     commands_if_false
+                     fi
+
+
+
+Example : 
+         name="vamsi"
+         if [ "$name" == "vamsi" ]
+         then
+         echo "Hello, Vamsi!"
+         else
+         echo "Who are you?"
+         fi
+
+
+
+3)if-elif-else Statement : 
+                           if [ condition1 ]
+                           then
+                           commands1
+                           elif [ condition2 ]
+                           then
+                           commands2
+                           else
+                           commands3
+                           fi
+
+
+                          
+Example :  name="Vamsi"
+           Nam="ravi"
+           if [ "$name" == "Vamsi" ]
+           then
+           echo "Hello, Vamsi!"
+           elif [ "$Nam" == "Ravi" ]
+           then
+           echo "Hello, Ravi!"
+           else
+           echo "Who are you?"
+           fi
+
+
+
+4)Nested if Statement : 
+                       if [ condition1 ]
+                       then
+                       if [ condition2 ]
+                       then
+                       commands1
+                       fi
+                       fi
+
+
+
+Example : 
+         name="vamsi"
+         Nam="Ravi"
+         if [ "$name" == "vamsi" ]
+         then
+         if [ "$Nam" == "Ravi" ]
+         then
+         echo "Hello, Vamsi!"
+         fi
+         fi
+
+
+
+*) Common Operators in Bash Conditionals:
+-->Numeric Operators:
+                 ___________________________________________
+                |     Operator	     Meaning                |
+                |-------------------------------------------|
+                |      -eq	      Equal to                  |
+                |      -ne	      Not equal to              |
+                |      -lt	      Less than                 |
+                |      -le	      Less than or equal        | 
+                |      -gt	      Greater than              | 
+                |      -ge	      Greater than or equal     |
+                |___________________________________________|                                          
+
+Examples : 
+        1)read -p 'enter a number : ' n
+          if [ $n -ge 18 ]
+          then
+          echo "Your are eligible to vote"
+          else
+          echo "Your are not eligible to vote"
+          fi
+         
+          
+         
+        2)read -p 'Enter your age : ' x
+          read -p 'Enter your girl age : ' y
+          if [ $x -gt 21 ] && [ $y -ge 18 ]
+          then
+          echo "CONGRATULATIONS YOU BOTH WILL GET MARRIED"
+          else
+          echo "EAT FIVE STAR DO NOTHING"
+          fi
+         
+
+
+String Operators:
+                 Operator	        Meaning
+                 == or =	        Equal
+                 !=	              Not equal
+                 -z	              Is empty
+                 -n	              Is not empty
+
+
+
+Example with String and Numbers : 
+                                 3)name="vamsi"
+                                   age=18
+                                   if [[ "$name" == "vamsi" && $age -ge 18 ]]           //In logical operations for "&&" Operator both conditions must be true and in "||" Operator any one condition must be true in the "if" condition
+                                   then
+                                   echo "Welcome, Vamsi! You are eligible."
+                                   fi
+
+
+
+loops in shell Scripting :
+                     Syntax:     
+                           for variable in list;
+                           do
+                           commands
+                           done
+
+
+
+Example : 
+       1)for name in vamsi shiva trayam;
+         do
+         echo "hello, $name"
+         done
+
+
+
+2)for alphabets in {a..z};   //here in brackets, only two dots should be present. it is a Syntax 
+  do 
+  echo "$alphabets"
+  done
+
+
+
+3)for num in {1..10};
+do
+echo "$num"
+done
+
+
+
+while loop : 
+           Syntax:
+                  Initialization
+                  while [ condition ];
+                  do
+                  commands
+                  ((increment/decrement))
+                  done
+
+
+
+Example : 
+         1)count=1
+           while [ $count -le 3 ];
+           do
+           echo "Count is $count"
+           ((count++))
+           done
+           
+           
+             
+         2)n=5
+           while [ $n -le 10 ];
+           do
+           echo "Count is : $n"
+           ((n++))
+           done
+
+
+
+Until loop :  Until loops are similar to while loops, but they execute until a specified condition becomes true. 
+            Syntax : 
+                     Initialization
+                     until [ condition ];
+                     do
+                     commands
+                     ((increment/decrement))
+                     done
+
+
+
+            Example(1) : 
+                     n=1
+                     until [ $n -ge 3 ];
+                     do
+                     echo "the count is : $n"
+                     ((n++))
+                     done
+
+                     output :-   the count is : 1
+                                 the count is : 2
+
+
+
+            Example(2) : 
+                     n=1
+                     until [ $n -gt 3 ];
+                     do
+                     echo "the count is : $n"
+                     ((n++))
+                     done
+
+                     output :-   the count is : 1
+                                 the count is : 2
+                                 the count is : 3
+
+
+
+Break and Continue : Break and continue statements are used to control loop execution. break exits the loop, while continue skips to the next iteration.
+
+These statements are typically used inside conditional blocks to alter the flow of the loop.
+
+Example on  "Continue" : 
+                        for i in {1..5};
+                        do
+                        if [ $i -eq 3 ];
+                        then
+                        continue
+                        fi
+                        echo "Number $i"
+                        done
+
+Example on "Break" : 
+                     for i in {1..5};
+                     do
+                     if [ $i -eq 4 ];
+                     then
+                     break
+                     fi
+                     echo "Number $i"
+                     done
+
+Example on both "Continue" and "break" : 
+                                         for i in {1..5};
+                                         do
+                                         if [ $i -eq 3 ];
+                                         then
+                                         continue
+                                         fi
+                                         echo "Number $i"
+                                         if [ $i -eq 4 ]; then
+                                         break
+                                         fi
+                                         done   
+
+
+
+Nested Loops : Nested loops allow you to place one loop inside another, enabling more complex iteration patterns.
+
+Each loop must be closed with its own done.
+
+
+
+Syntax : 
+         for var1 in list1;
+         do
+         for var2 in list2;
+         do
+         commands
+         done
+         done
+
+
+
+Example : 
+         for i in {1..3};
+         do
+         for j in {1..2};
+         do
+         echo "Outer loop $i, Inner loop $j"
+         done
+         done
+
+
+
+Reading a file line by line : 
+                              while read line
+                              do
+                              echo "$line"
+                              done < file_name.extension
+
+                              Output : it reads the inside file data or the content in the file.
+
+
+
+sleep concept : it will wait for 3 seconds to Exhuate the code
+      Example : 
+                echo "hey vamsi"
+                
+                sleep 3
+                
+                echo "how are you"
+                
+                sleep 3
+                
+                echo "what are you doing"
+                
+                sleep 3
+                
+                echo "have a nice day"
+                
+                sleep 3
+                
+                echo "bye" 
+
+
+
+Positional Arguments (or) Positional Parameters : 
+                                        Example :
+                                                  name=$1
+                                                  stud=$2
+                                                  
+                                                  echo "hey $name"
+                                                  
+                                                  sleep 3
+                                                  
+                                                  echo "are you $stud"
+                                                  
+                                                  sleep 3
+                                                  
+                                                  echo "how are you $name ,is everything good!"
+
+output : 
+        vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$  bash Hello.sh vamsi student
+        hey vamsi
+        are you student
+        how are you vamsi ,is everything good!
+
+
+
+IMP EXAMPLE : 
+              name=$1
+              stud=$2
+              
+              user=$(whoami)
+              date=$(date)
+              whereami=$(pwd)
+              
+              echo "hey $name"
+              
+              sleep 3
+              
+              echo "are you $stud or a $user"
+              
+              sleep 3
+              
+              echo "how are you $name ,is everything good! AND WHAT IS THE TODAY'S DATE $date"
+              
+              sleep 3
+              
+              echo "where am i now : $whereami"
+
+Output : 
+        vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$  bash Hello.sh vamsi student
+        hey vamsi
+        are you student or a vamsi
+        how are you vamsi ,is everything good! AND WHAT IS THE TODAY'S DATE Tue Jul  1 13:33:13 UTC 2025
+        where am i now : /mnt/c/Users/vamsi  
+
+
+
+ONE IMP COMMAND : 
+                  vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$  echo "$PWD, $SHELL, $USER, $HOSTNAME, $(whoami)"
+                  /mnt/c/Users/vamsi, /bin/bash, vamsi, LAPTOP-MBUD7PIO, vamsi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE VARIABLE EXPORT FROM WSL TERMINAL TO VI EDITOR :
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ person="SURESH"
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
+                                                      SURESH
+                                                      
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ cat Hello.sh
+                                                      #!/usr/bin/bash
+                                                      namee=$1
+                                                      stud=$2
+                                                      whereami=$(pwd)
+                                                      echo "hey $namee"
+                                                      sleep 3
+                                                      echo "are you $stud"
+                                                      sleep 3
+                                                      echo "how are you $namee ,is everything good!"
+                                                      sleep 3
+                                                      echo "where am i now : $whereami"
+                                                      
+                                                      
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ vi Hello.sh
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ cat Hello.sh
+                                                      #!/usr/bin/bash
+                                                      namee=$1
+                                                      stud=$2
+                                                      whereami=$(pwd)
+                                                      echo "hey $namee"
+                                                      sleep 3
+                                                      echo "are you $stud"
+                                                      sleep 3
+                                                      echo "how are you $namee ,is everything good!"
+                                                      sleep 3
+                                                      echo "where am i now : $whereami"
+                                                      echo "$person"                                #here the variable is placed from wsl terminal to vi editor
+                                                      
+
+
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ bash Hello.sh vamsi student
+                                                      hey vamsi
+                                                      are you student
+                                                      how are you vamsi ,is everything good!
+                                                      where am i now : /mnt/c/Users/vamsi
+                                                      //here this line shows a empty space due to it is not exhuate the """  echo "$person" command  """
+
+
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ export person                  //it will export the variable from wsl terminal to vi editor.
+                                                      vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ bash Hello.sh vamsi student
+                                                      hey vamsi
+                                                      are you student
+                                                      how are you vamsi ,is everything good!
+                                                      where am i now : /mnt/c/Users/vamsi
+                                                      SURESH
+
+
+
+Note : 
+       vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
+       SURESH
+       vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ exit
+       logout
+       
+       C:\Users\vamsi>wsl
+       vamsi@LAPTOP-MBUD7PIO:/mnt/c/Users/vamsi$ echo "$person"
+                                                                //here the connection between wsl terminal and vi editor is closed so it will not exhuate the code and any variable is not stored in the person  and it is a temporarly stored variable 
+
+
+
+RANDOM FUNCTION : 
+                >> echo "$RANDOM"                        //it's range between '0' to '32767'   
+
+
+
+1. Using bc for exponentiation : 
+                        Syntax : 
+                                echo "base ^ exponent" | bc
+                    Example(1) :
+                                echo "2^5" | bc
+                    Example(2) :
+                                base=3
+                                power=4
+                                result=$(echo "$base^$power" | bc)
+                                echo "Result: $result"
+
+
+
+2. Using awk for exponentiation :
+                         Syntax : 
+                                awk "BEGIN { print base ^ exponent }"
+                        Example : 
+                                awk "BEGIN { print 2^5 }"
+                                                              
+          
+
+Example on arithmetic operations with random function : 
+echo "$((2+3))"                                         //5
+echo "$((2-3))"                                        //-1  
+echo "$((2*3))"                                       //6
+echo "$((2/3))"                                      //0   
+echo "$((2%3))"                                     //2
+echo "2^2" | bc                                    //4
+echo "2^3" | bc                                   //8 
+awk "BEGIN { print 2^4 }"                        //16
+
+
+
+base=3
+power=4
+result=$(echo "$base^$power" | bc)
+echo "Result: $result"                          //81
+
+
+
+
+
+echo "$(($RANDOM+10))"         
+echo "$(($RANDOM-10))"
+echo "$(($RANDOM*10))"           // These all gives a random numbers
+echo "$(($RANDOM/10))"
+echo "$(($RANDOM%10))"
