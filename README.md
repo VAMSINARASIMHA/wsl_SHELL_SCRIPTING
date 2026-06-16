@@ -1,1 +1,1 @@
-This a small notes on Shell Scripting (Bash Language).
+This is a small notes on Shell Scripting (Bash Language).
